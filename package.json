@@ -1,13 +1,21 @@
 {
-  "name": "react-tracking",
-  "version": "1.0.0",
-  "description": "Made with create-react-library",
-  "author": "timolooser",
+  "name": "react-impression-read-click-tracking",
+  "description": "Tracking impressions, reads and clicks in React",
+  "version": "0.1.2",
+  "private": false,
+  "author": "Timo Looser",
   "license": "MIT",
-  "repository": "timolooser/react-tracking",
+  "keywords": [
+    "tracking",
+    "react",
+    "gtm",
+    "read",
+    "impression",
+    "click"
+  ],
   "main": "dist/index.js",
   "module": "dist/index.modern.js",
-  "source": "src/index.tsx",
+  "source": "src/index.ts",
   "engines": {
     "node": ">=10"
   },

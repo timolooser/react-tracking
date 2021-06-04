@@ -1,30 +1,53 @@
-# react-tracking
+# React Tracking
 
-> Made with create-react-library
+Easily track **Impressions, Reads** and **Clicks** in React.
 
-[![NPM](https://img.shields.io/npm/v/react-tracking.svg)](https://www.npmjs.com/package/react-tracking) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+## Installation
 
-## Install
+### NPM
 
-```bash
-npm install --save react-tracking
+```
+npm install react-impressions-reads-clicks-tracking
+```
+
+### Yarn
+
+```
+yarn add react-impressions-reads-clicks-tracking
 ```
 
 ## Usage
 
 ```tsx
-import React, { Component } from 'react'
+import { 
+  useTrackImpressionsReads, 
+  useTrackClicks } from 'react-impressions-reads-clicks-tracking'
 
-import MyComponent from 'react-tracking'
-import 'react-tracking/dist/index.css'
+...
 
-class Example extends Component {
-  render() {
-    return <MyComponent />
+const trackGtmEvent = (event: string, context: Object) => {
+  window.dataLayer = window.dataLayer || []
+  window.dataLayer.push({ event, context })
+}
+
+...
+
+const Div = ({id}: DivProps) => {
+  const context = {
+    ...useContext(TrackingContext),
+    id
   }
+
+  const handleImpression = () => trackGtmEvent('div-impression', context)
+  const handleRead = () => trackGtmEvent('div-read', context)
+  const handleClick = () => trackGtmEvent('div-click', context)
+
+  const ref = useRef(null)
+  useTrackImpressionsReads(ref, handleImpression, handleRead)
+  useTrackClicks(ref, handleClick)
+
+  return (
+    <div ref={ref}/>
+  )
 }
 ```
-
-## License
-
-MIT © [timolooser](https://github.com/timolooser)
