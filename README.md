@@ -7,13 +7,13 @@ Easily track **Impressions, Reads** and **Clicks** in React.
 ### NPM
 
 ```
-npm install react-impressions-reads-clicks-tracking
+npm install react-impression-read-click-tracking
 ```
 
 ### Yarn
 
 ```
-yarn add react-impressions-reads-clicks-tracking
+yarn add react-impression-read-click-tracking
 ```
 
 ## Usage
@@ -21,7 +21,7 @@ yarn add react-impressions-reads-clicks-tracking
 ```tsx
 import { 
   useTrackImpressionsReads, 
-  useTrackClicks } from 'react-impressions-reads-clicks-tracking'
+  useTrackClicks } from 'react-impression-read-click-tracking'
 
 ...
 
